@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
-        getPosts();
-        // getComments();
+        // getPosts();
+        getComments();
     }
 
     private void getPosts() {
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getComments() {
-        Call<List<Comment>> call = jsonPlaceHolderApi.getComments(3);
+        Call<List<Comment>> call = jsonPlaceHolderApi.getComments("posts/3/comments");
 
         call.enqueue(new Callback<List<Comment>>() {
             @Override
