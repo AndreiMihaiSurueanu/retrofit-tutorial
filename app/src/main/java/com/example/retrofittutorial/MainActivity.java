@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getComments() {
-        Call<List<Comment>> call = jsonPlaceHolderApi.getComments("posts/3/comments");
+        Call<List<Comment>> call = jsonPlaceHolderApi
+                .getComments("https://jsonplaceholder.typicode.com/posts/3/comments");
 
         call.enqueue(new Callback<List<Comment>>() {
             @Override
